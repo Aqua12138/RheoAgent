@@ -88,8 +88,8 @@ Software:
 
 - Evaluation in the real-world
   - [External Hand-Eye Calibration](https://github.com/pal-robotics/aruco_ros)
-  - [Controller Setup](https://moveit.picknik.ai/main/doc/examples/realtime_servo/realtime_servo_tutorial.html)
-  - SAM2 Visual Perception
+  - [Controller Setup](https://moveit.picknik.ai/main/doc/examples/realtime_servo/realtime_servo_tutorial.html)(For Univeral Robots)
+  - [SAM2 Visual Perception](https://github.com/facebookresearch/sam2)
   - End-to-End Control Publishing
 
 ## Demonstration
@@ -165,10 +165,4 @@ If you find this work useful, please cite our paper:
     year      = {2025},
 }
 ```
-
-
-## License
-
-
-## Acknowledgement
 
