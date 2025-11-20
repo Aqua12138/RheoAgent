@@ -1,18 +1,18 @@
 # RheoAgent: A Cross-Rheological Material Handling Robotic Manipulation System Based on Hierarchical Decision-Making Framework
 
-[[Project page]](https://aqua12138.github.io/RheoAgentWebsite/)
+[[Website page]](https://aqua12138.github.io/RheoAgentWebsite/)
 
 
-Haixu Zhang<sup>1,2,3</sup>,
-Bo Zhang<sup>3</sup>,
+Haixu Zhang<sup>1,2,3†</sup>,
+Bo Zhang<sup>3†</sup>,
 Danyang Zhang<sup>1,2</sup>,
 Xi Chen<sup>4</sup>,
 Wenqiang Lai<sup>1,2</sup>,
 Hongxue Huang<sup>1,2</sup>,
 Chi Zhang<sup>5</sup>,
-Haixin Liu<sup>4</sup>,,
-Tin Lun Lam<sup>1,2</sup>,,
-Hu Huang<sup>6</sup>,,
+Haixin Liu<sup>4</sup>,
+Tin Lun Lam<sup>1,2</sup>,
+Hu Huang<sup>6</sup>,
 Yuan Gao<sup>1,2</sup>,
 
 <sup>1</sup>The Chinese University of Hong Kong, Shenzhen,
@@ -23,13 +23,14 @@ Yuan Gao<sup>1,2</sup>,
 <sup>6</sup>University of Science and Technology of China
 
 
-<div align="center">
-    <img src="assets/method_nmi.png" width="80%">
-</div>
+
 
 
 
 ## Introduction
+<div align="center">
+    <img src="assets/method_nmi.png" width="80%">
+</div>
 RheoAgent is a hierarchical decision-making robotic manipulation system for cross-rheological material handling to tackle the robotics manipulation challenges
 posed by diverse rheological material scenarios. It establishes a new framework for intelligent rheological material handling, with applications that extend to industrial automation, laboratory robotics, and assistive technologies.
 
@@ -47,21 +48,21 @@ Please follow the official tutorial to install fluidlab:
 ## Real Robot
 ### Hardware :
 Robotic Manipulators:
-* 1x UR5 or UR7e (MoveIt 2 Servo interface is required)
-* 1x RealSense D405
-* 1x RealSense D435i
-* 1x RealSense L515
-* 1x Elephant Mercury B1 (for heterogeneous multi-agent coordination)
+* 1x [UR5](https://github.com/ros-industrial/universal_robot) or [UR7e](https://github.com/ros-industrial/universal_robot) (MoveIt 2 Servo interface is required)
+* 1x RealSense [D405](https://realsenseai.com/products/stereo-depth-camera-d405/)
+* 1x RealSense [D435i](https://www.intel.cn/content/www/cn/zh/products/sku/190004/intel-realsense-depth-camera-d435i/specifications.html)
+* 1x RealSense [L515](https://www.intel.cn/content/www/cn/zh/products/sku/201775/intel-realsense-lidar-camera-l515/specifications.html)
+* 1x [Elephant Mercury B1](https://www.elephantrobotics.com/en/mercury-b1-en/) (for heterogeneous multi-agent coordination)
 * 1x 3D printed plate-type end-effector
 * 1x 3D printed cup-type end-effector
 * USB-C cables and screws for RealSense
-* ArUco marker (for calibration)
+* [ArUco marker](https://chev.me/arucogen/) (for calibration)
 * 1x NVIDIA RTX 3090 Ti GPU
 
 Software:
-* Ubuntu 22.04
-* Unity
-* RealSense SDK
+* Ubuntu 20.04/22.04
+* Unity 2021.3.11f1c2
+* RealSense SDK v2.53.1
 
 ## Benchmark Quick Reproduction Guide
 - Pre-training
@@ -79,8 +80,8 @@ Software:
     ```bash
     #demo
     conda activate fluidlab
-    cd ./RheoMARS
-    python run.py --cfg_file configs/shac/pour.yaml --rl shac --exp_name=water --perc_type sensor --pre_train_model pour_policy.pt --horizon 500 --material WATER
+    cd ./RheoAdapt
+    python run.py --cfg_file configs/shac/flow.yaml --rl shac --exp_name=water --perc_type sensor --pre_train_model init_policy.pt --horizon 500 --material WATER
     ```
 
     - **pre_train_model**: Use the initial model obtained in [Pre-training](#Pre-training) as the pre-trained model
